@@ -20,6 +20,7 @@ export default {
     },
     extend: {
       colors: {
+        "gray-800":"#303639",
         "gray-900":"#191C1F",
         "warning-300":"#F3DE6D",
         "warning-500":"#EBC80C"
