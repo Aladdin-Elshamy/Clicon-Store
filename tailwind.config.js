@@ -21,6 +21,9 @@ export default {
     extend: {
       colors: {
         "secondray":"#1B6392",
+        "gray-50":"#F2F4F5",
+        "gray-500":"#77878F",
+        "gray-600":"#5F6C72",
         "gray-800":"#303639",
         "gray-900":"#191C1F",
         "warning-300":"#F3DE6D",

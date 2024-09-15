@@ -8,7 +8,7 @@ export default function HeaderOffer() {
   }
   return (
     <div className={`${open ? "block" : "hidden"} bg-gray-900 py-6 relative`}>
-      <div className="container flex flex-wrap items-center justify-between text-white">
+      <div className="container flex flex-col gap-4 md:flex-row items-center justify-between text-white">
         <div className="flex items-center gap-3 font-semibold text-2xl">
           <span className="block bg-warning-300 text-black px-3 py-2 -rotate-3 text-xl">
             Black
@@ -29,7 +29,7 @@ export default function HeaderOffer() {
         </HashLink>
       </div>
       <button
-        className="p-2 bg-gray-800 mr-6 absolute top-1/2 -translate-y-1/2 right-0"
+        className="p-2 bg-gray-800 md:mr-0 mr-6 lg:mr-6 absolute top-1/2 -translate-y-1/2 right-0"
         onClick={handleClick}
       >
         <Close />

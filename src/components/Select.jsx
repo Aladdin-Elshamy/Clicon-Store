@@ -10,14 +10,14 @@ import clsx from "clsx";
 import { useState } from "react";
 
 const langs = [
-  { id: 1, name: "English", img: "./images/us.png" },
-  { id: 2, name: "Mandarin", img: "./images/mandarin.png" },
-  { id: 3, name: "Russian", img: "./images/russa.png" },
+  { id: 1, name: "English", value: "Eng", img: "./images/us.png" },
+  { id: 2, name: "Mandarin", value: "Mand", img: "./images/mandarin.png" },
+  { id: 3, name: "Russian", value: "Rus", img: "./images/russa.png" },
 ];
 
-export default function Example() {
+export default function Select() {
   const [query, setQuery] = useState("");
-  const [selected] = useState(langs[0]);
+  const [selected, setSelected] = useState(langs[0]);
 
   const filteredLangs =
     query === ""
@@ -28,14 +28,18 @@ export default function Example() {
 
   return (
     <div className="mx-auto">
-      <Combobox value={selected} onClose={() => setQuery("")}>
+      <Combobox
+        value={selected}
+        onClose={() => setQuery("")}
+        onChange={(value) => setSelected(value)}
+      >
         <div className="relative z-20">
           <ComboboxInput
             className={clsx(
-              "w-24 rounded-sm border-none bg-transparent py-1.5 pr-8 pl-3 text-sm/6 text-white",
+              "w-20 rounded-sm border-none bg-transparent py-1.5 pr-8 pl-3 text-sm/6 text-white",
               "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
             )}
-            displayValue={(person) => person?.name}
+            displayValue={(lang) => lang?.value}
             onChange={(event) => setQuery(event.target.value)}
           />
           <ComboboxButton className="group absolute inset-y-0 right-0 px-2.5 z-20">
@@ -61,7 +65,7 @@ export default function Example() {
                 <img src={lang.img} alt={lang.name} className="w-4 h-4" />
                 <div
                   className={`${
-                    selected.id === lang.id ? "text-black" : "text-gray-400"
+                    selected?.id === lang.id ? "text-black" : "text-gray-400"
                   } text-sm/6`}
                 >
                   {lang.name}

@@ -10,13 +10,13 @@ import clsx from "clsx";
 import { useState } from "react";
 
 const currencies = [
-  { id: 1, name: "USD" },
-  { id: 2, name: "EGP" },
+  { id: 1, name: "Dollar (USD)", value: "USD" },
+  { id: 2, name: "Euro (EUR)", value: "EUR" },
 ];
 
-export default function Example() {
+export default function DropdownMenu() {
   const [query, setQuery] = useState("");
-  const [selected] = useState(currencies[0]);
+  const [selected, setSelected] = useState(currencies[0]);
 
   const filteredCurrencies =
     query === ""
@@ -27,14 +27,18 @@ export default function Example() {
 
   return (
     <div className="mx-auto">
-      <Combobox value={currencies[0]} onClose={() => setQuery("")}>
+      <Combobox
+        value={selected}
+        onChange={(value) => setSelected(value)}
+        onClose={() => setQuery("")}
+      >
         <div className="relative z-20">
           <ComboboxInput
             className={clsx(
               "max-w-20 rounded-sm border-none bg-transparent py-1.5 pr-8 pl-3 text-sm/6 text-white",
               "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25"
             )}
-            displayValue={(currency) => currency?.name}
+            displayValue={(currency) => currency?.value}
             onChange={(event) => setQuery(event.target.value)}
           />
           <ComboboxButton className="group absolute inset-y-0 right-0 px-2.5 z-20">
@@ -58,7 +62,7 @@ export default function Example() {
             >
               <div
                 className={`${
-                  selected.id === currency.id ? "" : "text-gray-400"
+                  selected?.id === currency.id ? "" : "text-gray-400"
                 } text-sm/6`}
               >
                 {currency.name}
