@@ -4,6 +4,7 @@ import { fetchProducts } from "@/store/Slices/productList";
 import Product from "../components/Product";
 
 export default function Home() {
+  const [email, setEmail] = useState("");
   const data = useSelector((state) => state.productList);
   const dispatch = useDispatch();
   const [category, setCategory] = useState("");
@@ -96,9 +97,18 @@ export default function Home() {
             Praesent fringilla erat a lacinia egestas. Donec vehicula tempor
             libero et cursus. Donec non quam urna. Quisque vitae porta ipsum.
           </p>
-          <form action="" className="w-full lg:w-3/5 max-w-9xl relative">
+          <form
+            action=""
+            className="w-full lg:w-3/5 max-w-9xl relative"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setEmail("");
+            }}
+          >
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full py-6 text-black placeholder:text-gray-500 pl-7"
               placeholder="Email address"
             />
@@ -107,7 +117,7 @@ export default function Home() {
             </button>
           </form>
           <div className="bg-[#3376a0] w-48 sm:w-96 h-[1.5px] mt-8 mb-4 sm:mb-0"></div>
-          <img src="/images/brands.png" className="" />
+          <img src="/images/brands.png" />
         </div>
       </div>
     </>
