@@ -75,7 +75,7 @@ export default function Home() {
           </div>
         </div>
         {data.loading && (
-          <p className="text-center text-2xl font-medium text-secondray">
+          <p className="text-center text-2xl font-medium text-secondray py-52">
             Loading...
           </p>
         )}
