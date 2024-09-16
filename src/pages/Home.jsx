@@ -79,7 +79,11 @@ export default function Home() {
             Loading...
           </p>
         )}
-        {!data.loading && data.error ? <p>{data.error}</p> : null}
+        {!data.loading && data.error ? (
+          <p className="text-center text-2xl font-medium text-secondray py-52">
+            {data.error}
+          </p>
+        ) : null}
         {!data.loading && data.data.products?.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {data.data.products?.map((product) => (
