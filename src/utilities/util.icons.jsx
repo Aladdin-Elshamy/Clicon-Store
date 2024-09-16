@@ -23,6 +23,31 @@ export const RightArrow = () => (
   </svg>
 );
 
+export const WhiteRightArrow = () => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.125 10H16.875"
+      stroke="white"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.25 4.375L16.875 10L11.25 15.625"
+      stroke="white"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export const Close = () => (
   <svg
     width="16"
@@ -506,6 +531,24 @@ export const Add = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+    />
+  </svg>
+);
+
+export const RightFlatArrow = () => (
+  <svg
+    width="6"
+    height="10"
+    viewBox="0 0 6 10"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.5 1.25L5.25 5L1.5 8.75"
+      stroke="#191C1F"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );

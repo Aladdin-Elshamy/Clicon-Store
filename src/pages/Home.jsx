@@ -2,44 +2,16 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "@/store/Slices/productList";
 import Product from "../components/Product";
-
+import { CATEGORIES } from "../data";
+import { setCategory } from "@/store/Slices/category";
 export default function Home() {
   const [email, setEmail] = useState("");
   const data = useSelector((state) => state.productList);
   const dispatch = useDispatch();
-  const [category, setCategory] = useState("");
-  const categories = [
-    "beauty",
-    "fragrances",
-    "furniture",
-    "groceries",
-    "home-decoration",
-    "kitchen-accessories",
-    "laptops",
-    "mens-shirts",
-    "mens-shoes",
-    "mens-watches",
-    "mobile-accessories",
-    "motorcycle",
-    "skin-care",
-    "smartphones",
-    "sports-accessories",
-    "sunglasses",
-    "tablets",
-    "tops",
-    "vehicle",
-    "womens-bags",
-    "womens-dresses",
-    "womens-jewellery",
-    "womens-shoes",
-    "womens-watches",
-  ];
-  function handleCategoryChange(newCategory) {
-    setCategory(newCategory);
-  }
+  const category = useSelector((state) => state.category.category);
 
   useEffect(() => {
-    if (!category) {
+    if (category === "All") {
       dispatch(fetchProducts());
       return;
     }
@@ -50,23 +22,23 @@ export default function Home() {
   return (
     <>
       <div className="container text-black">
-        <div className="my-4 flex items-center justify-between">
-          <h2 className="text-2xl">
+        <div className="my-4 flex items-center justify-between gap-2 flex-wrap">
+          <h2 className="text-lg sm:text-3xl order-2 sm:order-1">
             <span className="text-secondray font-semibold capitalize">
               {category ? category : "All"}
             </span>{" "}
             Products
           </h2>
-          <div>
-            <label htmlFor="category">Filter by Category:</label>
+          <div className="order-1 sm:order-2">
+            <label htmlFor="category">Filter by Category: </label>
             <select
               id="category"
               value={category}
-              onChange={(e) => handleCategoryChange(e.target.value)}
-              className="ml-2 p-2 border border-gray-300"
+              onChange={(e) => dispatch(setCategory(e.target.value))}
+              className="p-2 border border-gray-300"
             >
               <option value="">All Categories</option>
-              {categories.map((category) => (
+              {CATEGORIES.map((category) => (
                 <option key={category} value={category}>
                   {category}
                 </option>
