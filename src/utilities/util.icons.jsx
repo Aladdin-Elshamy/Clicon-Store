@@ -472,3 +472,40 @@ export const Phone = () => (
     />
   </svg>
 );
+
+export const Delete = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="3 6 5 6 21 6"></polyline>
+    <path d="M19 6L19 20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V6"></path>
+    <line x1="10" y1="11" x2="10" y2="17"></line>
+    <line x1="14" y1="11" x2="14" y2="17"></line>
+    <path d="M9 6L9 3C9 2.45 9.45 2 10 2H14C14.55 2 15 2.45 15 3L15 6"></path>
+  </svg>
+);
+
+export const Add = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="mr-2 h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+    />
+  </svg>
+);
