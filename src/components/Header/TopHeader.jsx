@@ -10,7 +10,7 @@ import DropdownMenu from "../DropdownMenu";
 import Select from "../Select";
 export default function TopHeader() {
   return (
-    <div className="bg-secondray text-white py-4 text-sm border-b border-[#77adc5]">
+    <div className="bg-secondray text-white py-4 text-sm border-b border-[#3376a0]">
       <div className="container flex items-center justify-between flex-col md:flex-row gap-4 md:gap-0">
         <p>Welcome to Clicon online eCommerce store.</p>
         <div className="flex md:gap-4 gap-0 items-center flex-col md:flex-row">
